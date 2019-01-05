@@ -9,6 +9,7 @@ view: columns {
 
   dimension: character_maximum_length {
     type: number
+    hidden: yes
     sql: ${TABLE}.CHARACTER_MAXIMUM_LENGTH ;;
   }
 
