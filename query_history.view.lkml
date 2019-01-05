@@ -197,14 +197,14 @@ view: query_history {
     alias: [prior_month_total_job_count]
   }
 
-  measure: prior_mtd_query_count {
+  measure: prior_mtd_query_count_test {
     type: count
     filters: {field: is_prior_month_mtd value: "yes"}
     value_format_name:  decimal_0
     alias: [prior_mtd_job_count, prior_month_job_count]
   }
   
-  measure: prior_mtd_query_count_test {
+  measure: prior_mtd_query_count {
     type: count
     filters: {field: start_date value: "last month"}
     filters: {field: is_mtd value: "yes"}
