@@ -61,6 +61,11 @@ view: warehouse_metering_history {
     sql:  EXTRACT(month, ${start_raw}) = EXTRACT(month, current_timestamp()) - 1
       and ${start_raw} <= dateadd(month, -1, current_timestamp())  ;;
   }
+  
+  dimension: is_mtd {
+    type: yesno
+    sql:  ${start_day_of_month} <= extract('day', current_timestamp);;
+  }
 
   measure: count {
     type: count
@@ -81,14 +86,15 @@ view: warehouse_metering_history {
     type: sum
     sql:  ${credits_used} ;;
     filters: {field: start_date value: "this month"}
-    value_format: "$0.000,\" K\""
+#     value_format: "$0.000,\" K\""
     drill_fields: [warehouse_name,total_credits_used]
   }
 
   measure: prior_mtd_credits_used {
     type: sum
     sql:  ${credits_used} ;;
-    filters: {field: is_prior_month_mtd value: "yes"}
+    filters: {field: is_mtd value: "yes"}
+    filters: {field: start_date value: "last month"}
 
   }
 
