@@ -169,6 +169,13 @@ view: query_history {
     sql:  EXTRACT(month, ${start_raw}) = EXTRACT(month, current_timestamp()) - 1
             and ${start_raw} <= dateadd(month, -1, current_timestamp())  ;;
   }
+  
+  dimension: is_mtd {
+    type: yesno
+    sql:  ${start_day_of_month} <= extract('day', current_timestamp);;
+  }
+  
+  
 
   measure: query_count {
     type: count
@@ -193,6 +200,14 @@ view: query_history {
   measure: prior_mtd_query_count {
     type: count
     filters: {field: is_prior_month_mtd value: "yes"}
+    value_format_name:  decimal_0
+    alias: [prior_mtd_job_count, prior_month_job_count]
+  }
+  
+  measure: prior_mtd_query_count_test {
+    type: count
+    filters: {field: start_date value: "last month"}
+    filters: {field: is_mtd value: "yes"}
     value_format_name:  decimal_0
     alias: [prior_mtd_job_count, prior_month_job_count]
   }
