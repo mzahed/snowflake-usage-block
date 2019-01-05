@@ -280,7 +280,8 @@ view: query_history {
     type:  average
     sql:  ${execution_time} ;;
     group_label: "Runtime Metrics"
-    filters: {field: is_prior_month_mtd value: "yes"}
+    filters: {field: start_date value: "last month"}
+    filters: {field: is_mtd value: "yes"}
     value_format_name: decimal_2
   }
 
