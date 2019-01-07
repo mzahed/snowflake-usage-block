@@ -1,4 +1,4 @@
-- dashboard: snowflake_usage_wesr
+- dashboard: snowflake_usage_west
   title: Snowflake Usage West
   layout: newspaper
   elements:
