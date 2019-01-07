@@ -1,4 +1,4 @@
-connection: "account_usage_west"
+connection: "account_usage"
 
 # include all the views
 include: "*.view"
