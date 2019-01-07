@@ -1,5 +1,5 @@
-- dashboard: snowflake_usage
-  title: Snowflake Usage
+- dashboard: snowflake_usage_wesr
+  title: Snowflake Usage West
   layout: newspaper
   elements:
   - title: Warehouse Metering History - Total Credits by Month
