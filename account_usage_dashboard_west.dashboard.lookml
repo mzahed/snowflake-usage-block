@@ -114,9 +114,9 @@
       - id: query_history.count
         name: Query History
         axisId: query_history.count
-        __FILE: snowflake_usage_block_west/account_usage_dashboard.dashboard.lookml
+        __FILE: snowflake_usage_block_west/account_usage_dashboard_west.dashboard.lookml
         __LINE_NUM: 213
-      __FILE: snowflake_usage_block_west/account_usage_dashboard.dashboard.lookml
+      __FILE: snowflake_usage_block_west/account_usage_dashboard_west.dashboard.lookml
       __LINE_NUM: 201
     listen: {}
     row: 16
@@ -188,9 +188,9 @@
       - id: query_history.average_execution_time
         name: Average Execution Time
         axisId: query_history.average_execution_time
-        __FILE: snowflake_usage_block_west/account_usage_dashboard.dashboard.lookml
+        __FILE: snowflake_usage_block_west/account_usage_dashboard_west.dashboard.lookml
         __LINE_NUM: 287
-      __FILE: snowflake_usage_block_west/account_usage_dashboard.dashboard.lookml
+      __FILE: snowflake_usage_block_west/account_usage_dashboard_west.dashboard.lookml
       __LINE_NUM: 275
     listen: {}
     row: 31
@@ -603,7 +603,7 @@
       - id: load_history.total_row_count
         name: Load History Total Row Count
         axisId: load_history.total_row_count
-        __FILE: snowflake_usage_block_west/account_usage_dashboard.dashboard.lookml
+        __FILE: snowflake_usage_block_west/account_usage_dashboard_west.dashboard.lookml
         __LINE_NUM: 924
       showLabels: true
       showValues: true
@@ -612,7 +612,7 @@
       tickDensity: default
       tickDensityCustom: 5
       type: linear
-      __FILE: snowflake_usage_block_west/account_usage_dashboard.dashboard.lookml
+      __FILE: snowflake_usage_block_west/account_usage_dashboard_west.dashboard.lookml
       __LINE_NUM: 921
     x_axis_label: Load Date
     single_value_title: Rows Loaded Last 7 Days
@@ -762,9 +762,9 @@
       - id: query_history.average_execution_time
         name: Average Execution Time
         axisId: query_history.average_execution_time
-        __FILE: snowflake_usage_block_west/account_usage_dashboard.dashboard.lookml
+        __FILE: snowflake_usage_block/account_usage_dashboard_west.dashboard.lookml
         __LINE_NUM: 365
-      __FILE: snowflake_usage_block_west/account_usage_dashboard.dashboard.lookml
+      __FILE: snowflake_usage_block/account_usage_dashboard_west.dashboard.lookml
       __LINE_NUM: 353
     x_axis_reversed: false
     y_axis_reversed: false
