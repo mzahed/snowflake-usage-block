@@ -4,7 +4,7 @@ connection: "account_usage_west"
 include: "*.view"
 
 # include all the dashboards
-include: "account_usage_dashboard.dashboard.lookml"
+include: "account_usage_dashboard_west.dashboard.lookml"
 
 datagroup: snowflake_usage_block_default_datagroup {
   # sql_trigger: SELECT MAX(id) FROM etl_log;;
