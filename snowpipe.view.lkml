@@ -3,7 +3,7 @@ view: snowpipe {
     sql: select *
         from table(information_schema.pipe_usage_history(
           date_range_start=>dateadd('day',-180,current_date()),
-          date_range_end=>current_date()));
+          date_range_end=>current_date()))
        ;;
   }
 
@@ -11,6 +11,21 @@ view: snowpipe {
     type: count
     drill_fields: [detail*]
   }
+  
+  measure: total_credits_used
+    type: sum
+    sql: ${credits_used};;
+   }
+   
+   measure: total_files_inserted
+    type: sum
+    sql: ${credits_used};;
+   }
+   
+   measure: total_bytes_inserted
+    type: sum
+    sql: ${credits_used};;
+   }
 
   dimension_group: start_time {
     type: time
