@@ -12,19 +12,19 @@ view: snowpipe {
     drill_fields: [detail*]
   }
   
-  measure: total_credits_used
+  measure: total_credits_used {
     type: sum
     sql: ${credits_used};;
    }
    
-   measure: total_files_inserted
+   measure: total_files_inserted {
     type: sum
-    sql: ${credits_used};;
+    sql: ${files_inserted};;
    }
    
-   measure: total_bytes_inserted
+   measure: total_bytes_inserted {
     type: sum
-    sql: ${credits_used};;
+    sql: ${bytes_inserted};;
    }
 
   dimension_group: start_time {
