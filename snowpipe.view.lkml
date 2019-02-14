@@ -1,4 +1,4 @@
-view: derived_snowpipe {
+view: snowpipe {
   derived_table: {
     sql: select *
         from table(information_schema.pipe_usage_history(
