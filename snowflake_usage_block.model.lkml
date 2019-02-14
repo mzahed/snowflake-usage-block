@@ -20,6 +20,9 @@ persist_with: snowflake_usage_block_default_datagroup
 explore: login_history {
 }
 
+explore: snowpipe {
+}
+
 explore: query_history {
   join: databases {
     type: left_outer
