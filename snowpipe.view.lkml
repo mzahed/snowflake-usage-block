@@ -27,7 +27,7 @@ view: snowpipe {
     sql: ${bytes_inserted};;
    }
 
-  dimension_group: start_time {
+  dimension_group: start {
     type: time
     sql: ${TABLE}."START_TIME" ;;
   }
