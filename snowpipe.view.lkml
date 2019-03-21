@@ -6,11 +6,6 @@ view: snowpipe {
           date_range_end=>current_date()))
        ;;
   }
-
-  measure: count {
-    type: count
-    drill_fields: [detail*]
-  }
   
   measure: total_credits_used {
     type: sum
