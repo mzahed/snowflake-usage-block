@@ -56,6 +56,48 @@ view: snowpipe {
     type: number
     sql: ${TABLE}."FILES_INSERTED" ;;
   }
+  
+  dimension: is_prior_month_mtd {
+    type: yesno
+    sql:  EXTRACT(month, ${start_raw}) = EXTRACT(month, current_timestamp()) - 1
+      and ${start_raw} <= dateadd(month, -1, current_timestamp())  ;;
+  }
+  
+  dimension: is_mtd {
+    type: yesno
+    sql:  ${start_day_of_month} <= extract('day', current_timestamp);;
+  }
+
+  measure: count {
+    type: count
+    drill_fields: [warehouse_name]
+  }
+
+  measure: average_credits_used {
+    type: average
+    sql:  ${credits_used} ;;
+  }
+
+  measure: total_credits_used {
+    type: sum
+    sql: ${credits_used} ;;
+  }
+
+  measure: current_mtd_credits_used {
+    type: sum
+    sql:  ${credits_used} ;;
+    filters: {field: start_date value: "this month"}
+#     value_format: "$0.000,\" K\""
+    drill_fields: [warehouse_name,total_credits_used]
+  }
+
+  measure: prior_mtd_credits_used {
+    type: sum
+    sql:  ${credits_used} ;;
+    filters: {field: is_mtd value: "yes"}
+    filters: {field: start_date value: "last month"}
+
+  }
 
   set: detail {
     fields: [
