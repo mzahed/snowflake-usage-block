@@ -86,5 +86,20 @@ view: snowpipe {
     filters: {field: start_date value: "last month"}
 
   }
+  
+  measure: current_mtd_files_inserted {
+    type: sum
+    sql:  ${files_inserted} ;;
+    filters: {field: start_date value: "this month"}
+#     value_format: "$0.000,\" K\""
+  }
+
+  measure: prior_mtd_files_inserted {
+    type: sum
+    sql:  ${files_inserted} ;;
+    filters: {field: is_mtd value: "yes"}
+    filters: {field: start_date value: "last month"}
+
+  }
 
 }
