@@ -1,10 +1,7 @@
 view: snowpipe {
   derived_table: {
     sql: select *
-        from table(information_schema.pipe_usage_history(
-          date_range_start=>dateadd('day',-180,current_date()),
-          date_range_end=>current_date()))
-       ;;
+        from pipe_usage_history
   }
   
   measure: total_credits_used {
