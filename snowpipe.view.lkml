@@ -1,7 +1,7 @@
 view: snowpipe {
   derived_table: {
     sql: select *
-        from pipe_usage_history
+        from pipe_usage_history;;
   }
   
   measure: total_credits_used {
