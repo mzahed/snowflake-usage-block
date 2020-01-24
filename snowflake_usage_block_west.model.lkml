@@ -23,6 +23,8 @@ explore: login_history {
 explore: snowpipe {
 }
 
+explore: derived_snowflake_ease_query {}
+
 explore: query_history {
   join: databases {
     type: left_outer
