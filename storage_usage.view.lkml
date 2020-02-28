@@ -1,10 +1,6 @@
 view: storage_usage {
   sql_table_name:
-  {% if database_name._in_query or database_id._in_query %}
-  SNOWFLAKE.ACCOUNT_USAGE.DATABASE_STORAGE_USAGE_HISTORY
-  {% else %}
-  SNOWFLAKE.ACCOUNT_USAGE.STORAGE_USAGE
-  {% endif %};;
+  SNOWFLAKE.ACCOUNT_USAGE.DATABASE_STORAGE_USAGE_HISTORY;;
 
   dimension: database_id {
     type: number
@@ -34,20 +30,11 @@ view: storage_usage {
 
   dimension: storage_bytes {
     type: number
-    sql: {% if database_name._in_query or database_id._in_query %}
-    ${TABLE}.AVERAGE_DATABASE_BYTES
-    {% else %}
-    ${TABLE}.STORAGE_BYTES
-    {% endif %}
-     ;;
+    sql: ${TABLE}.AVERAGE_DATABASE_BYTES;;
   }
   dimension: failsafe_bytes {
     type: number
-    sql: {% if database_name._in_query or database_id._in_query %}
-    ${TABLE}.AVERAGE_FAILSAFE_BYTES
-    {% else %}
-    ${TABLE}.FAILSAFE_BYTES
-     {% endif %};;
+    sql: ${TABLE}.AVERAGE_FAILSAFE_BYTES;;
   }
 
   dimension: storage_tb {
