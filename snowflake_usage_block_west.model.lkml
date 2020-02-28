@@ -23,6 +23,9 @@ explore: login_history {
 explore: snowpipe {
 }
 
+explore: recluster_usage {
+}
+
 explore: derived_snowflake_ease_query {}
 
 explore: query_history {
