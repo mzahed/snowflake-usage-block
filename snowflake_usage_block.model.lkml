@@ -23,6 +23,9 @@ explore: login_history {
 explore: snowpipe {
 }
 
+explore: recluster_usage {
+}
+
 explore: query_history {
   join: databases {
     type: left_outer
