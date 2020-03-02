@@ -26,6 +26,9 @@ explore: snowpipe {
 explore: recluster_usage {
 }
 
+explore: derived_db_storage {
+}
+
 explore: query_history {
   join: databases {
     type: left_outer
