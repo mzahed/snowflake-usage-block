@@ -55,7 +55,7 @@ view: derived_db_storage {
        ;;
   }
 
-  dimension_group: storage_usage_usage {
+  dimension_group: usage {
     type: time
     sql: ${TABLE}."storage_usage.usage_month" ;;
   }
