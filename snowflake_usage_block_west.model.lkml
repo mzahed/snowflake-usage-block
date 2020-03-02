@@ -26,6 +26,9 @@ explore: snowpipe {
 explore: recluster_usage {
 }
 
+explore: derived_db_storage {
+}
+
 explore: derived_snowflake_ease_query {}
 
 explore: query_history {
