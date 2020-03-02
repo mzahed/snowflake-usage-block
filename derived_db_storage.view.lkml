@@ -79,4 +79,9 @@ view: derived_db_storage {
     type: number
     sql: ${TABLE}."storage_usage.billable_tb" ;;
   }
+  
+   measure: total_storage_tb {
+    type: sum
+    sql: ${storage_usage_billable_tb} ;;
+  }
 }
