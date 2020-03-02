@@ -50,7 +50,7 @@ view: derived_db_storage {
       FROM SNOWFLAKE.ACCOUNT_USAGE.DATABASE_STORAGE_USAGE_HISTORY AS storage_usage
 
       WHERE
-      {% condition usage_date %} storage_usage.USAGE_DATE {% endcondition %}
+      {% condition usage_month %} storage_usage.USAGE_DATE {% endcondition %}
       GROUP BY 1,2,3,4
        ;;
   }
