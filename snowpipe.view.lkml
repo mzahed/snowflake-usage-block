@@ -1,7 +1,8 @@
 view: snowpipe {
   derived_table: {
-    sql: select *
-        from pipe_usage_history;;
+    sql: select pipe_usage_history.*,pipes.PIPE_CATALOG as database
+        from "SNOWFLAKE"."ACCOUNT_USAGE".pipe_usage_history
+        join "SNOWFLAKE"."ACCOUNT_USAGE"."PIPES" pipes on pipe_usage_history.pipe_name = pipes.pipe_name ;;
   }
   
   measure: total_credits_used {
@@ -32,6 +33,11 @@ view: snowpipe {
   dimension: pipe_name {
     type: string
     sql: ${TABLE}."PIPE_NAME" ;;
+  }
+  
+  dimension: database {
+    type: string
+    sql: ${TABLE}."DATABASE" ;;
   }
 
   dimension: credits_used {
