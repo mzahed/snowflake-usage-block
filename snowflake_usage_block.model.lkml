@@ -21,9 +21,17 @@ explore: login_history {
 }
 
 explore: snowpipe {
+join: db_team_department {
+    sql_on: ${snowpipe.database} = ${db_team_department.database} ;;
+    relationship: one_to_one
+  }
 }
 
 explore: recluster_usage {
+join: db_team_department {
+    sql_on: ${recluster_usage.database_name} = ${db_team_department.database} ;;
+    relationship: one_to_one
+  }
 }
 
 explore: derived_db_storage {
