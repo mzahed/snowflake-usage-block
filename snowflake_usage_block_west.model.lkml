@@ -21,15 +21,21 @@ explore: login_history {
 }
 
 explore: snowpipe {
+join: db_team_department {
+    sql_on: ${snowpipe.database} = ${db_team_department.database} ;;
+    relationship: one_to_one
+  }
 }
 
 explore: recluster_usage {
+join: db_team_department {
+    sql_on: ${recluster_usage.database_name} = ${db_team_department.database} ;;
+    relationship: one_to_one
+  }
 }
 
 explore: derived_db_storage {
 }
-
-explore: derived_snowflake_ease_query {}
 
 explore: query_history {
   join: databases {
@@ -61,7 +67,12 @@ explore: load_history {
   }
 }
 
-explore: storage_usage {}
+explore: storage_usage {
+join: db_team_department {
+    sql_on: ${storage_usage.database_name} = ${db_team_department.database} ;;
+    relationship: one_to_one
+  }
+  }
 
 explore: warehouse_metering_history {}
 
