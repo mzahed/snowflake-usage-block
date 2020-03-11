@@ -59,7 +59,12 @@ explore: load_history {
   }
 }
 
-explore: storage_usage {}
+explore: storage_usage {
+join: db_team_department {
+    sql_on: ${storage_usage.database_name} = ${db_team_department.database} ;;
+    relationship: one_to_one
+  }
+  }
 
 explore: warehouse_metering_history {}
 
