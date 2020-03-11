@@ -91,7 +91,7 @@ view: db_team_department {
        AS department_name,
         storage_usage.DATABASE_NAME  AS database
       FROM SNOWFLAKE.ACCOUNT_USAGE.DATABASE_STORAGE_USAGE_HISTORY AS storage_usage
-      GROUP BY 1,2,3;
+      GROUP BY 1,2,3
        ;;
   }
 
