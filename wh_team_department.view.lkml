@@ -77,7 +77,6 @@ ELSE CASE WHEN warehouse_metering_history.WAREHOUSE_NAME LIKE (CAST('%' AS VARCH
  END
  AS department_name
 FROM SNOWFLAKE.ACCOUNT_USAGE.WAREHOUSE_METERING_HISTORY  AS warehouse_metering_history
-  }
   ;;
   }
 
