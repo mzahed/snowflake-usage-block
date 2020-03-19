@@ -74,7 +74,12 @@ join: db_team_department {
   }
   }
 
-explore: warehouse_metering_history {}
+explore: warehouse_metering_history {
+join: wh_team_department {
+    sql_on: ${warehouse_metering_history.warehouse_name} = ${wh_team_department.database} ;;
+    relationship: one_to_one
+  }
+}
 
 # explore: columns {}
 #
