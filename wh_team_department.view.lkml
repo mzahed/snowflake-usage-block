@@ -78,6 +78,8 @@ ELSE CASE WHEN warehouse_metering_history.WAREHOUSE_NAME LIKE (CAST('%' AS VARCH
  AS department_name
 FROM SNOWFLAKE.ACCOUNT_USAGE.WAREHOUSE_METERING_HISTORY  AS warehouse_metering_history
   }
+  ;;
+  }
 
   dimension: team_name {
     type: string
