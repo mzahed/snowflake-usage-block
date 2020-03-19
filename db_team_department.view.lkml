@@ -1,6 +1,7 @@
 view: db_team_department {
   derived_table: {
     sql: SELECT
+      DISTINCT
       CASE WHEN storage_usage.DATABASE_NAME LIKE (CAST('%' AS VARCHAR) || CAST(REPLACE(REPLACE(REPLACE('DP', '^', '^^'), '%', '^%'), '_', '^_') AS VARCHAR) || CAST('%' AS VARCHAR)) ESCAPE '^' THEN 'DP'
       ELSE CASE WHEN storage_usage.DATABASE_NAME LIKE (CAST('%' AS VARCHAR) || CAST(REPLACE(REPLACE(REPLACE('CONTACT', '^', '^^'), '%', '^%'), '_', '^_') AS VARCHAR) || CAST('%' AS VARCHAR)) ESCAPE '^' THEN 'GP'
       ELSE CASE WHEN storage_usage.DATABASE_NAME LIKE (CAST('%' AS VARCHAR) || CAST(REPLACE(REPLACE(REPLACE('EASE', '^', '^^'), '%', '^%'), '_', '^_') AS VARCHAR) || CAST('%' AS VARCHAR)) ESCAPE '^' THEN 'EI DATA'
