@@ -1,8 +1,9 @@
 view: wh_team_department {
   derived_table: {
     sql: SELECT
-	warehouse_metering_history.WAREHOUSE_NAME  AS warehouse,
-	CASE WHEN warehouse_metering_history.WAREHOUSE_NAME LIKE (CAST('%' AS VARCHAR) || CAST(REPLACE(REPLACE(REPLACE('DP', '^', '^^'), '%', '^%'), '_', '^_') AS VARCHAR) || CAST('%' AS VARCHAR)) ESCAPE '^' THEN 'DP' 
+ DISTINCT
+warehouse_metering_history.WAREHOUSE_NAME  AS warehouse,
+CASE WHEN warehouse_metering_history.WAREHOUSE_NAME LIKE (CAST('%' AS VARCHAR) || CAST(REPLACE(REPLACE(REPLACE('DP', '^', '^^'), '%', '^%'), '_', '^_') AS VARCHAR) || CAST('%' AS VARCHAR)) ESCAPE '^' THEN 'DP' 
 ELSE CASE WHEN warehouse_metering_history.WAREHOUSE_NAME LIKE (CAST('%' AS VARCHAR) || CAST(REPLACE(REPLACE(REPLACE('CONTACT', '^', '^^'), '%', '^%'), '_', '^_') AS VARCHAR) || CAST('%' AS VARCHAR)) ESCAPE '^' THEN 'GP' 
 ELSE CASE WHEN warehouse_metering_history.WAREHOUSE_NAME LIKE (CAST('%' AS VARCHAR) || CAST(REPLACE(REPLACE(REPLACE('EASE', '^', '^^'), '%', '^%'), '_', '^_') AS VARCHAR) || CAST('%' AS VARCHAR)) ESCAPE '^' THEN 'EI DATA' 
 ELSE CASE WHEN warehouse_metering_history.WAREHOUSE_NAME LIKE (CAST('%' AS VARCHAR) || CAST(REPLACE(REPLACE(REPLACE('EDO', '^', '^^'), '%', '^%'), '_', '^_') AS VARCHAR) || CAST('%' AS VARCHAR)) ESCAPE '^' THEN 'EDA' 
