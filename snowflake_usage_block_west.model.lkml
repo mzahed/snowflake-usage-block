@@ -35,6 +35,10 @@ join: db_team_department {
 }
 
 explore: derived_db_storage {
+join: db_team_department {
+    sql_on: ${derived_db_storage.storage_usage_database_name} = ${db_team_department.database} ;;
+    relationship: one_to_one
+  }
 }
 
 explore: query_history {
