@@ -62,7 +62,7 @@ view: storage_usage {
     sql: ${total_tb};;
   }
   
-  measure: total_tb {
+  measure: total_billable_tb {
     type: sum
     sql: ${total_tb};;
   }
