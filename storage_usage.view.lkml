@@ -61,6 +61,11 @@ view: storage_usage {
     type: average
     sql: ${total_tb};;
   }
+  
+  measure: total_tb {
+    type: sum
+    sql: ${total_tb};;
+  }
 
   measure: curr_mtd_billable_tb {
     type: average
