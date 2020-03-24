@@ -46,7 +46,7 @@ view: derived_db_storage {
        END
        AS department_name,
         storage_usage.DATABASE_NAME  AS "storage_usage.database_name",
-        AVG(((storage_usage.AVERAGE_DATABASE_BYTES / power(1024,4)) + (storage_usage.AVERAGE_FAILSAFE_BYTES / power(1024,4)))) AS "storage_usage.billable_tb"
+        MAX(((storage_usage.AVERAGE_DATABASE_BYTES / power(1024,4)) + (storage_usage.AVERAGE_FAILSAFE_BYTES / power(1024,4)))) AS "storage_usage.billable_tb"
       FROM SNOWFLAKE.ACCOUNT_USAGE.DATABASE_STORAGE_USAGE_HISTORY AS storage_usage
 
       WHERE
