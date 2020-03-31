@@ -2,7 +2,7 @@ view: snowpipe {
   derived_table: {
     sql: select pipe_usage_history.*,pipes.PIPE_CATALOG as database
         from "SNOWFLAKE"."ACCOUNT_USAGE".pipe_usage_history
-        join (SELECT DISTINCT pipe_name from "SNOWFLAKE"."ACCOUNT_USAGE"."PIPES") pipes on pipe_usage_history.pipe_name = pipes.pipe_name;;
+        join "SNOWFLAKE"."ACCOUNT_USAGE"."PIPES" pipes on pipe_usage_history.pipe_id = pipes.pipe_id;;
   }
   
   measure: total_credits_used {
