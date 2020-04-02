@@ -58,7 +58,7 @@ view: storage_usage {
   }
 
   measure: billable_tb {
-    type: average
+    type: max
     sql: ${total_tb};;
   }
   
